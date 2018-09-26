@@ -1,4 +1,4 @@
-package com.cutieOS.EasyAccess;
+package com.cutieOS;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

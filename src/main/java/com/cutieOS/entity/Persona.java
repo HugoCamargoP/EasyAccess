@@ -1,0 +1,50 @@
+package com.cutieOS.entity;
+
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="persona")
+public class Persona {
+
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id_persona;
+
+    private String name_persona;
+
+
+  //  @ManyToMany
+    //private Service service;
+
+    public Persona() {}
+
+    public Persona(String name_persona) {
+        this.name_persona = name_persona;
+    }
+
+    public int getId_persona() {
+        return id_persona;
+    }
+
+    public void setId_persona(int id_persona) {
+        this.id_persona = id_persona;
+    }
+
+    public String getName_persona() {
+        return name_persona;
+    }
+
+    public void setName_persona(String name_persona) {
+        this.name_persona = name_persona;
+    }
+
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "id_persona=" + id_persona +
+                ", name_persona='" + name_persona + '\'' +
+                '}';
+    }
+}
