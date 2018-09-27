@@ -24,7 +24,8 @@ public class ContactDao {
 
     }
 
-    public void putContact(Contact contact) {
-        iContactToPersonas.save(contact);
+    public Contact putContact(Contact contact) {
+       return iContactToPersonas.save(contact);
+
     }
 }

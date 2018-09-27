@@ -1,7 +1,5 @@
 package com.cutieOS.entity;
 
-import org.springframework.boot.autoconfigure.web.ResourceProperties;
-
 import javax.persistence.*;
 
 @Entity

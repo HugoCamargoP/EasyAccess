@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/contact")
 public class ContactController {
 
     @Autowired
@@ -24,7 +23,7 @@ public class ContactController {
     @PutMapping("/contact/{id_contact}")
     public Contact putContact(@RequestBody Contact contact,@PathVariable int id_contact){
         contact.setId_contact(id_contact);
-        contactDao.putContact(contact);
+        return contactDao.putContact(contact);
     }
 
 
