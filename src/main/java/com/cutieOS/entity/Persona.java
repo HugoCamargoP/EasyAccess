@@ -16,7 +16,7 @@ public class Persona {
 
 
   //  @ManyToMany
-    //private Service service;
+    //private Servicio service;
 
     public Persona() {}
 
