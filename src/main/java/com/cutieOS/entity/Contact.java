@@ -17,6 +17,10 @@ public class Contact {
     public Contact() {
     }
 
+    /*
+    @ManyToOne
+    private Persona persona;
+¨*/
     public Contact(String name_contact, String value_contact) {
         this.name_contact = name_contact;
         this.value_contact = value_contact;
@@ -54,4 +58,6 @@ public class Contact {
                 ", value_contact='" + value_contact + '\'' +
                 '}';
     }
+
+
 }

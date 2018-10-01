@@ -14,11 +14,19 @@ public class Persona {
 
     private String name_persona;
 
+/*
+   @ManyToMany
+    private Servicio service;
 
-  //  @ManyToMany
-    //private Servicio service;
 
-    public Persona() {}
+   @ManyToOne
+   private Contact contact;
+
+
+*/
+        public Persona() {}
+
+
 
     public Persona(String name_persona) {
         this.name_persona = name_persona;
@@ -47,4 +55,28 @@ public class Persona {
                 ", name_persona='" + name_persona + '\'' +
                 '}';
     }
+
+
+    /*
+    public Servicio getService() {
+        return service;
+    }
+
+    public void setService(Servicio service) {
+        this.service = service;
+    }
+
+    public Contact getContact() {
+        return contact;
+    }
+
+    public void setContact(Contact contact) {
+        this.contact = contact;
+
+
+    }
+    */
 }
+
+
+
