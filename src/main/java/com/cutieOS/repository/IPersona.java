@@ -5,7 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface IPersona extends JpaRepository<Persona, Integer>
 {
-
-
 }
 

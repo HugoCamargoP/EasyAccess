@@ -20,7 +20,7 @@ public class PersonaDao {
         return iPersonas.findAll();
     }
 
-    //insert a videogame to the db
+    //insert a videogame to <></>he db
     public boolean insertPersona(Persona persona){
         if(iPersonas.save(persona)!= null)
             return true;
@@ -28,7 +28,7 @@ public class PersonaDao {
         return false;
     }
 
-    public Persona modificarPersona(Persona persona) {
+    public Persona modificarPersona(Persona persona)     {
         return iPersonas.save(persona);
     }
 }

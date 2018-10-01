@@ -15,8 +15,8 @@ public class Persona {
     private String name_persona;
 
 
-  //  @ManyToMany
-    //private Servicio service;
+    /*@ManyToMany
+    private Servicio service;*/
 
     public Persona() {}
 
