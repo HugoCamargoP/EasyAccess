@@ -15,14 +15,14 @@ public class ServiceController
     @Autowired
     ServiceDao serviceDao;
 
-    @GetMapping("/services")
+    @GetMapping("/servicios")
     public List<Servicio> getAllServices(){return
             serviceDao.getAllServices();}
 
-    @PostMapping("/services")
+    @PostMapping("/servicios")
     public boolean insertService (@RequestBody Servicio servicio){ return serviceDao.insertService(servicio);}
 
-    @PutMapping("/services/{id_service}")
+    @PutMapping("/servicios/{id_service}")
     public Servicio putService(@RequestBody Servicio servicio, @PathVariable int id_service){
         servicio.setId_service(id_service);
         return serviceDao.putService(servicio);

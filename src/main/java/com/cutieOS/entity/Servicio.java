@@ -1,25 +1,33 @@
 package com.cutieOS.entity;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.persistence.*;
 
 
 @Entity
-@Table(name="services")
+@Table(name="services", catalog = "conPersona")
 public class Servicio {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "SERVICIO_ID",unique = true,nullable = false)
     private int id_service;
 
     private String nombre_service;
 
 
+    @Autowired
+    private Persona persona;
+
     public Servicio(){}
 
 
 
-    public Servicio(String nombre_service) {
+
+    public Servicio(String nombre_service, int id_servicio) {
         this.nombre_service = nombre_service;
+        this.id_service=id_servicio;
     }
 
     public int getId_service() {
@@ -44,5 +52,16 @@ public class Servicio {
                 "id_service=" + id_service +
                 ", nombre_service='" + nombre_service + '\'' +
                 '}';
+    }
+
+
+    @ManyToMany(fetch = FetchType.LAZY,mappedBy = "servicess")
+    public Persona getPersona() {
+        return persona;
+    }
+
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
     }
 }

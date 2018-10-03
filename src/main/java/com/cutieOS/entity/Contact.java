@@ -1,5 +1,8 @@
 package com.cutieOS.entity;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 
 @Entity
@@ -9,6 +12,7 @@ public class Contact {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "CONTACTO_ID",unique = true,nullable = false)
     private int id_contact;
 
     private String name_contact;
@@ -17,11 +21,16 @@ public class Contact {
     public Contact() {
     }
 
-    /*
-    @ManyToOne
+
+    @ManyToOne(fetch = FetchType.LAZY,optional = false)
+    @JoinColumn(name = "PERSONA_ID",nullable = false,updatable = false)
     private Persona persona;
-¨*/
-    public Contact(String name_contact, String value_contact) {
+
+   // contructor sin agregar el autowired de persona
+
+
+    public Contact(int id_contact,String name_contact, String value_contact) {
+        this.id_contact=id_contact;
         this.name_contact = name_contact;
         this.value_contact = value_contact;
     }
@@ -60,4 +69,11 @@ public class Contact {
     }
 
 
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
+    }
 }

@@ -8,25 +8,33 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-/*
+
 @RestController
-@RequestMapping("/contact")*/
+@RequestMapping("/contact")
 public class ContactPersonaController {
 
-/*
+
     @Autowired
     ContactPersonaDao contactPersonaDao;
 
-    @GetMapping("/{id_contact}/persona")
-    public List<Persona> getAllContactByPersona(@PathVariable int id_contact){
-        return contactPersonaDao.findAll(id_contact);
+    @GetMapping("/{id_persona}/contact")
+    public List<Contact> getAllContactByPersona(@PathVariable int id_persona){
+        return contactPersonaDao.findAll(id_persona);
     }
 
 
-    @PostMapping("/{id_contact}/persona")
-    public void saveContactByPersona (@RequestBody Persona persona, @PathVariable int id_contact){
-        persona.setContact(new Contact());
-        contactPersonaDao.saveContactByPersona(persona);
+    //se pone id_persona
+    @PostMapping("/{id_persona}/contact")
+    public void saveContactByPersona (@RequestBody Contact contact, @PathVariable int id_persona){
+        contact.setPersona(new Persona("",id_persona));
+        contactPersonaDao.saveContactByPersona(contact);
     }
-*/
+
+    //se Agrega id_persona
+    @PutMapping("/{id_persona}/contact")
+    public Contact putContactByPersona (@RequestBody Contact contact,@PathVariable int id_persona){
+        contact.setPersona(new Persona("",id_persona)); contactPersonaDao.putContactByPersona(contact);
+
+        return contact;
+    }
 }

@@ -7,10 +7,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/*
-@Service*/
+
+@Service
 public class PersonaServiceDao {
-    /*
+
     @Autowired
     IPersona iPersonas;
 
@@ -20,14 +20,16 @@ public class PersonaServiceDao {
     public void saveServiceByPersona(Persona persona) {
         iPersonas.save(persona);
     }
-    */
 
-/*
+
+
     public void putServiceByPersona(Persona persona) {
-    if (iPersonas.findByServiceId_service(persona.getService().getId_service());
-    iPersonas.save(persona);
+    if (iPersonas.findById(persona.getService().getId_service()).isPresent()){
+        iPersonas.save(persona);
+        }
+
 
 
     }
-*/
+
 }

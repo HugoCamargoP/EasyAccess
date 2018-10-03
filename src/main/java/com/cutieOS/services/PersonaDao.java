@@ -15,12 +15,12 @@ public class PersonaDao {
     IPersona iPersonas;
 
 
-    //retrieves all the videogames from the db
+    //retrieves all the Persona from the db
     public List<Persona> getAllPersona(){
         return iPersonas.findAll();
     }
 
-    //insert a videogame to the db
+    //insert a persona to the db
     public boolean insertPersona(Persona persona){
         if(iPersonas.save(persona)!= null)
             return true;

@@ -1,35 +1,36 @@
 package com.cutieOS.entity;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.persistence.*;
 
 @Entity
-@Table(name="persona")
+@Table(name="persona", catalog = "conPersona")
 public class Persona {
 
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "PERSONA_ID", unique = true,nullable = false)
     private int id_persona;
 
     private String name_persona;
 
-/*
-   @ManyToMany
+
+    @Autowired
     private Servicio service;
 
 
-   @ManyToOne
-   private Contact contact;
 
 
-*/
         public Persona() {}
 
 
-
-    public Persona(String name_persona) {
+        //nuevo constructor
+    public Persona(String name_persona, int id_persona) {
         this.name_persona = name_persona;
+        this.id_persona = id_persona;
     }
 
     public int getId_persona() {
@@ -40,6 +41,7 @@ public class Persona {
         this.id_persona = id_persona;
     }
 
+    @Column(name = "STOCK_NAME",unique = true,nullable = false)
     public String getName_persona() {
         return name_persona;
     }
@@ -57,7 +59,9 @@ public class Persona {
     }
 
 
-    /*
+    @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JoinTable(name = "stock_Services", catalog = "conPersona",joinColumns =
+            {@JoinColumn(name = "PERSONA_ID",nullable = false,updatable = false)},inverseJoinColumns = {@JoinColumn(name = "SERVICIO_ID",nullable = false,updatable = false)})
     public Servicio getService() {
         return service;
     }
@@ -66,16 +70,8 @@ public class Persona {
         this.service = service;
     }
 
-    public Contact getContact() {
-        return contact;
-    }
-
-    public void setContact(Contact contact) {
-        this.contact = contact;
 
 
-    }
-    */
 }
 
 

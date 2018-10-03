@@ -8,11 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-/*
+
 @RestController
-@RequestMapping("/persona")*/
+@RequestMapping("/persona")
 public class PersonaServiceController {
-/*
+
     @Autowired
     PersonaServiceDao personaServiceDao;
 
@@ -24,20 +24,20 @@ public class PersonaServiceController {
 
     @PostMapping("/{id_service}/persona")
     public void saveServiceByPersona(@RequestBody Persona persona, @PathVariable int id_service){
-        persona.setService(new Servicio()); personaServiceDao.saveServiceByPersona(persona);
+        persona.setService(new Servicio("",id_service)); personaServiceDao.saveServiceByPersona(persona);
     }
 
-    */
-/*
+
+
 
     @PutMapping("/{id_service}/persona")
     public Persona putServiceByPersona (@RequestBody Persona persona,@PathVariable int id_service){
-        persona.setService(new Servicio()); personaServiceDao.putServiceByPersona(persona);
+        persona.setService(new Servicio("",id_service)); personaServiceDao.putServiceByPersona(persona);
 
         return persona;
     }
 
-*/
+
 
 
 }

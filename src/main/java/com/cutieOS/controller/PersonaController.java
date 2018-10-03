@@ -14,18 +14,18 @@ public class PersonaController {
     @Autowired
     PersonaDao personaDao;
 
-    @GetMapping("/persona")
+    @GetMapping("/personas")
     public List<Persona> getAllPersona(){
         return personaDao.getAllPersona();
     }
 
 
-    @PostMapping("/persona")
+    @PostMapping("/personas")
     public boolean insertPersona(@RequestBody Persona persona){
         return  personaDao.insertPersona(persona);
     }
 
-    @PutMapping("/persona/{id_persona}")
+    @PutMapping("/personas/{id_persona}")
     public Persona modificarPersona(@RequestBody Persona persona, @PathVariable int id_persona){
 
         persona.setId_persona(id_persona);

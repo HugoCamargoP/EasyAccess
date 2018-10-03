@@ -14,13 +14,13 @@ public class ContactController {
     @Autowired
     ContactDao contactDao;
 
-    @GetMapping("/contact")
+    @GetMapping("/contacts")
     public List<Contact> getAllContact() {return contactDao.getAllContact();}
 
-    @PostMapping("/contact")
+    @PostMapping("/contacts")
     public boolean insertContact(@RequestBody Contact contact){ return contactDao.insertContact(contact);}
 
-    @PutMapping("/contact/{id_contact}")
+    @PutMapping("/contacts/{id_contact}")
     public Contact putContact(@RequestBody Contact contact,@PathVariable int id_contact){
         contact.setId_contact(id_contact);
         return contactDao.putContact(contact);
