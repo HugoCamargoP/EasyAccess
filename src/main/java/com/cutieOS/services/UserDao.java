@@ -27,6 +27,7 @@ public class UserDao {
     }
 
 
-
-
+    public boolean validation(User user) {
+            return true;
+    }
 }

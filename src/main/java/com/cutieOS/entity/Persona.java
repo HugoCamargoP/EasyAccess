@@ -26,11 +26,10 @@ public class Persona {
 */
         public Persona() {}
 
-<<<<<<< HEAD
+
     /*@ManyToMany
     private Servicio service;*/
-=======
->>>>>>> 6210edea5ce559f70aa13f447998a313dd3b111b
+
 
 
     public Persona(String name_persona) {
