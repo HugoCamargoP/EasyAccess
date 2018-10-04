@@ -30,8 +30,5 @@ public class UserController {
         return userDao.modificarUser(user);
     }
 
-    @PostMapping("/login")
-    public boolean validation(@RequestBody User user){return userDao.validation(user);}
-
 }
 
