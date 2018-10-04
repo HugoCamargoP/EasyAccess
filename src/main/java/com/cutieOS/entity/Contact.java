@@ -4,6 +4,7 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 @Table(name = "contact")
@@ -22,7 +23,7 @@ public class Contact {
     }
 
 
-    @ManyToOne(fetch = FetchType.LAZY,optional = false)
+    @ManyToOne(fetch = FetchType.EAGER,optional = false)
     @JoinColumn(name = "PERSONA_ID",nullable = false,updatable = false)
     private Persona persona;
 
@@ -67,7 +68,6 @@ public class Contact {
                 ", value_contact='" + value_contact + '\'' +
                 '}';
     }
-
 
     public Persona getPersona() {
         return persona;

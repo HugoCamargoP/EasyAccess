@@ -24,7 +24,7 @@ public class PersonaServiceDao {
 
 
     public void putServiceByPersona(Persona persona) {
-    if (iPersonas.findById(persona.getService().getId_service()).isPresent()){
+    if (iPersonas.findById(persona.getService().hashCode()).isPresent()){
         iPersonas.save(persona);
         }
 

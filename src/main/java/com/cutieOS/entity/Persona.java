@@ -1,9 +1,10 @@
 package com.cutieOS.entity;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
+
 
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 @Table(name="persona", catalog = "conPersona")
@@ -18,8 +19,12 @@ public class Persona {
     private String name_persona;
 
 
-    @Autowired
-    private Servicio service;
+
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "stock_Services", catalog = "conPersona",joinColumns =
+            {@JoinColumn(name = "PERSONA_ID",nullable = false,updatable = false)},inverseJoinColumns = {@JoinColumn(name = "SERVICIO_ID",nullable = false,updatable = false)})
+    private Collection<Servicio> service;
 
 
 
@@ -41,7 +46,7 @@ public class Persona {
         this.id_persona = id_persona;
     }
 
-    @Column(name = "STOCK_NAME",unique = true,nullable = false)
+
     public String getName_persona() {
         return name_persona;
     }
@@ -59,19 +64,13 @@ public class Persona {
     }
 
 
-    @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    @JoinTable(name = "stock_Services", catalog = "conPersona",joinColumns =
-            {@JoinColumn(name = "PERSONA_ID",nullable = false,updatable = false)},inverseJoinColumns = {@JoinColumn(name = "SERVICIO_ID",nullable = false,updatable = false)})
-    public Servicio getService() {
+    public Collection<Servicio> getService() {
         return service;
     }
 
-    public void setService(Servicio service) {
+    public void setService(Collection<Servicio> service) {
         this.service = service;
     }
-
-
-
 }
 
 

@@ -3,14 +3,16 @@ package com.cutieOS.controller;
 
 import com.cutieOS.entity.Contact;
 import com.cutieOS.entity.Persona;
+import com.cutieOS.entity.Servicio;
 import com.cutieOS.services.ContactPersonaDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 @RestController
-@RequestMapping("/contact")
 public class ContactPersonaController {
 
 

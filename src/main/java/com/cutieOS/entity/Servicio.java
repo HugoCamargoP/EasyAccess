@@ -3,6 +3,7 @@ package com.cutieOS.entity;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 
 @Entity
@@ -17,8 +18,7 @@ public class Servicio {
     private String nombre_service;
 
 
-    @Autowired
-    private Persona persona;
+    private Collection<Persona> persona;
 
     public Servicio(){}
 
@@ -55,13 +55,15 @@ public class Servicio {
     }
 
 
-    @ManyToMany(fetch = FetchType.LAZY,mappedBy = "servicess")
-    public Persona getPersona() {
+
+    // el de security no uso  el fectch = fetch.lazy
+    // solo el mappenBy
+    @ManyToMany(mappedBy = "servicess")
+    public Collection<Persona> getPersona() {
         return persona;
     }
 
-
-    public void setPersona(Persona persona) {
+    public void setPersona(Collection<Persona> persona) {
         this.persona = persona;
     }
 }

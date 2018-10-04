@@ -7,10 +7,11 @@ import com.cutieOS.services.PersonaServiceDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 @RestController
-@RequestMapping("/persona")
 public class PersonaServiceController {
 
     @Autowired
@@ -24,7 +25,11 @@ public class PersonaServiceController {
 
     @PostMapping("/{id_service}/persona")
     public void saveServiceByPersona(@RequestBody Persona persona, @PathVariable int id_service){
-        persona.setService(new Servicio("",id_service)); personaServiceDao.saveServiceByPersona(persona);
+        Collection<Servicio> colle = new ArrayList<>();
+        colle.add( new Servicio("",id_service));
+        persona.setService(colle);
+        personaServiceDao.saveServiceByPersona(persona);
+
     }
 
 
@@ -32,7 +37,10 @@ public class PersonaServiceController {
 
     @PutMapping("/{id_service}/persona")
     public Persona putServiceByPersona (@RequestBody Persona persona,@PathVariable int id_service){
-        persona.setService(new Servicio("",id_service)); personaServiceDao.putServiceByPersona(persona);
+        Collection<Servicio> collec = new ArrayList<>();
+        collec.add(new Servicio("",id_service));
+        persona.setService(collec);
+        personaServiceDao.putServiceByPersona(persona);
 
         return persona;
     }
