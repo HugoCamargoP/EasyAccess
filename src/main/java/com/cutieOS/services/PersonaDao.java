@@ -28,7 +28,7 @@ public class PersonaDao {
         return false;
     }
 
-    public Persona modificarPersona(Persona persona) {
+    public Persona modificarPersona(Persona persona)     {
         return iPersonas.save(persona);
     }
 }

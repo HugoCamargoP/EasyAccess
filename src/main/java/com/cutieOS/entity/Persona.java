@@ -28,6 +28,10 @@ public class Persona {
 
 
 
+    /*@ManyToMany
+    private Servicio service;*/
+
+
 
         public Persona() {}
 

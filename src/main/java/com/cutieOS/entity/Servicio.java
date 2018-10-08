@@ -17,7 +17,6 @@ public class Servicio {
 
     private String nombre_service;
 
-
     private Collection<Persona> persona;
 
     public Servicio(){}
