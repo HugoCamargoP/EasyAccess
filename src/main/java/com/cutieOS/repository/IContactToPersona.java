@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface IContactToPersona extends JpaRepository<Contact, Integer> {
 
-     List<Contact> findByPersona_Id_persona(Integer id_contact);
+     //List<Contact> findByPersona_Id_persona(Integer id_contact);
 }

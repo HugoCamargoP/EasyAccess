@@ -19,13 +19,15 @@ public class ContactPersonaController {
     @Autowired
     ContactPersonaDao contactPersonaDao;
 
+    /*
     @GetMapping("/{id_persona}/contact")
     public List<Contact> getAllContactByPersona(@PathVariable int id_persona){
         return contactPersonaDao.findAll(id_persona);
     }
-
+     */
 
     //se pone id_persona
+    /*
     @PostMapping("/{id_persona}/contact")
     public void saveContactByPersona (@RequestBody Contact contact, @PathVariable int id_persona){
         contact.setPersona(new Persona("",id_persona));
@@ -39,4 +41,5 @@ public class ContactPersonaController {
 
         return contact;
     }
+    */
 }

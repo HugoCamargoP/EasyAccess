@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
-@Table(name="persona", catalog = "conPersona")
+@Table(name="persona") //, catalog = "conPersona")
 public class Persona {
 
 
@@ -20,12 +20,12 @@ public class Persona {
 
 
 
-
+    /*
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "stock_Services", catalog = "conPersona",joinColumns =
             {@JoinColumn(name = "PERSONA_ID",nullable = false,updatable = false)},inverseJoinColumns = {@JoinColumn(name = "SERVICIO_ID",nullable = false,updatable = false)})
     private Collection<Servicio> service;
-
+     */
 
 
     /*@ManyToMany
@@ -67,7 +67,7 @@ public class Persona {
                 '}';
     }
 
-
+    /*
     public Collection<Servicio> getService() {
         return service;
     }
@@ -75,6 +75,7 @@ public class Persona {
     public void setService(Collection<Servicio> service) {
         this.service = service;
     }
+    */
 }
 
 

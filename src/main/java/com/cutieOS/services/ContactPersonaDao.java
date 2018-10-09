@@ -19,10 +19,9 @@ public class ContactPersonaDao {
     @Autowired
     IPersona iPersonas;
 
-    public List<Contact> findAll(int id_persona) {return iContactToPersonas.findByPersona_Id_persona(id_persona);
-    }
+    //public List<Contact> findAll(int id_persona) {return iContactToPersonas.findByPersona_Id_persona(id_persona);}
 
-
+    /*
     public void saveContactByPersona(Contact contact) {iContactToPersonas.save(contact);
     }
 
@@ -34,5 +33,6 @@ public class ContactPersonaDao {
 
 
     }
+    */
 }
 

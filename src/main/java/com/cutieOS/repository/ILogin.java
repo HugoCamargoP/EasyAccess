@@ -7,7 +7,4 @@ import org.springframework.data.jpa.repository.Query;
 public interface ILogin extends JpaRepository <User , Integer> {
 
     User findByUserAndPassword(String user,String password);
-
-    //@Query("SELECT user.user,user.password FROM user")
-
 }

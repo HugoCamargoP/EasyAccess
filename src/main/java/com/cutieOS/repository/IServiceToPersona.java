@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface IServiceToPersona extends JpaRepository<Servicio, Integer> {
 
-    List<Servicio> findByPersona_Id_persona(Integer id_persona);
+    //List<Servicio> findByPersona_Id_persona(Integer id_persona);
 }

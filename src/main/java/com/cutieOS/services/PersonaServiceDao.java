@@ -13,7 +13,7 @@ public class PersonaServiceDao {
 
     @Autowired
     IPersona iPersonas;
-
+    /*
     public List<Persona> findAll(int id_services) {
         return iPersonas.findByServiceId_service(id_services);}
 
@@ -24,12 +24,9 @@ public class PersonaServiceDao {
 
 
     public void putServiceByPersona(Persona persona) {
-    if (iPersonas.findById(persona.getService().hashCode()).isPresent()){
+    	if (iPersonas.findById(persona.getService().hashCode()).isPresent()){
         iPersonas.save(persona);
         }
-
-
-
     }
-
+    */
 }

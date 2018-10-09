@@ -7,7 +7,7 @@ import java.util.Collection;
 
 
 @Entity
-@Table(name="services", catalog = "conPersona")
+@Table(name="services") //, catalog = "conPersona")
 public class Servicio {
 
     @Id
@@ -17,8 +17,10 @@ public class Servicio {
 
     private String nombre_service;
 
+    /*
     private Collection<Persona> persona;
-
+    */
+    
     public Servicio(){}
 
 
@@ -57,6 +59,7 @@ public class Servicio {
 
     // el de security no uso  el fectch = fetch.lazy
     // solo el mappenBy
+    /*
     @ManyToMany(mappedBy = "servicess")
     public Collection<Persona> getPersona() {
         return persona;
@@ -64,5 +67,5 @@ public class Servicio {
 
     public void setPersona(Collection<Persona> persona) {
         this.persona = persona;
-    }
+    }*/
 }
